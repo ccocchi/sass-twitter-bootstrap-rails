@@ -35,7 +35,7 @@ To use complementary javascripts files, you can use the `manifest` present in th
 
     /= require twitter/bootstrap
 
-or if you do not with to use all javascripts included, you can require them separalety
+or if you do not wish to use all javascripts included, you can require them separalety
 
     /= require twitter/bootstrap-buttons
     /= require twitter/bootstrap-tabs
