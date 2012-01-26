@@ -26,9 +26,9 @@ You're done !
 ### Rails 3.1
 
 For Rails 3.1+, the files will be added to the assets pipeline and available for you to use. To use Bootstrap stylesheets, add this line to the file
-`app/assets/stylesheets/application.css`
+`app/assets/stylesheets/application.scss`
 
-    *= require twitter/bootstrap
+    @import "twitter/bootstrap";
 
 To use complementary javascripts files, you can use the `manifest` present in the gem by adding this line to the file
 `app/assets/javascripts/application.js`
