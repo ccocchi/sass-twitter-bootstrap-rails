@@ -141,36 +141,21 @@
   .row {
     margin-left: $gridGutterWidth * -1;
     @include clearfix;
-  }
-  [class*="span"] {
-    @include gridColumn($gridGutterWidth);
+    > [class*="span"] {
+      @include gridColumn($gridGutterWidth);
+    }
   }
 
-  .span1      { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 1); }
-  .span2      { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 2); }
-  .span3      { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 3); }
-  .span4      { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 4); }
-  .span5      { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 5); }
-  .span6      { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 6); }
-  .span7      { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 7); }
-  .span8      { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 8); }
-  .span9      { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 9); }
-  .span10     { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 10); }
-  .span11     { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 11); }
+  @for $i from 1 through 11 {
+    .span#{$i} { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, $i); }
+  }
+
   .span12,
   .container  { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 12); }
 
-  .offset1    { @include offset($gridColumnWidth, $gridGutterWidth, 1); }
-  .offset2    { @include offset($gridColumnWidth, $gridGutterWidth, 2); }
-  .offset3    { @include offset($gridColumnWidth, $gridGutterWidth, 3); }
-  .offset4    { @include offset($gridColumnWidth, $gridGutterWidth, 4); }
-  .offset5    { @include offset($gridColumnWidth, $gridGutterWidth, 5); }
-  .offset6    { @include offset($gridColumnWidth, $gridGutterWidth, 6); }
-  .offset7    { @include offset($gridColumnWidth, $gridGutterWidth, 7); }
-  .offset8    { @include offset($gridColumnWidth, $gridGutterWidth, 8); }
-  .offset9    { @include offset($gridColumnWidth, $gridGutterWidth, 9); }
-  .offset10   { @include offset($gridColumnWidth, $gridGutterWidth, 10); }
-  .offset11   { @include offset($gridColumnWidth, $gridGutterWidth, 11); }
+  @for $i from 1 through 11 {
+    .offset#{$i} { @include offset($gridColumnWidth, $gridGutterWidth, $i); }
+  }
 }
 
 // Fluid Grid System
@@ -198,18 +183,9 @@
       margin-left: 0;
     }
 
-    .span1 { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, 1); }
-    .span2 { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, 2); }
-    .span3 { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, 3); }
-    .span4 { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, 4); }
-    .span5 { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, 5); }
-    .span6 { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, 6); }
-    .span7 { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, 7); }
-    .span8 { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, 8); }
-    .span9 { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, 9); }
-    .span10 { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, 10); }
-    .span11 { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, 11); }
-    .span12 { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, 12); }
+    @for $i from 1 through 11 {
+      .span#{$i} { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, $i); }
+    }
   }
 }
 
@@ -224,18 +200,9 @@
   input,
   textarea,
   .uneditable-input {
-    &.span1   { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 1); }
-    &.span2   { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 2); }
-    &.span3   { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 3); }
-    &.span4   { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 4); }
-    &.span5   { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 5); }
-    &.span6   { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 6); }
-    &.span7   { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 7); }
-    &.span8   { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 8); }
-    &.span9   { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 9); }
-    &.span10  { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 10); }
-    &.span11  { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 11); }
-    &.span12  { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 12); }
+    @for $i from 1 through 11 {
+      &.span#{$i} { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, $i); }
+    }
   }
 }
 
