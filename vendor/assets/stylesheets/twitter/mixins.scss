@@ -17,7 +17,7 @@
 }
 .clearfix { @include clearfix; }
 
-@mixin tab-focus {
+.tab-focus {
   // Default
   outline: thin dotted;
   // Webkit
