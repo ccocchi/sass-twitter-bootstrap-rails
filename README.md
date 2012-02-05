@@ -4,16 +4,20 @@ Twitter CSS Toolkit, Bootstrap, for Rails with Sass !
 
 This gem provides :
 
-* stylesheets converted to Sass [sass-twitter-bootstrap](http://github.com/jlong/sass-twitter-bootstrap)
+* stylesheets converted to Sass
 * javascripts from Bootstrap also
 
-The gem uses Twitter Bootstrap _1.4.0_
+The `master` branch uses new *Twitter Bootstrap 2*. Version 1.4 of Bootstrap is kept in a branch now.
 
 ## Installation
 
 Include Boostrap in your `Gemfile`
 
-    gem 'sass-twitter-bootstrap-rails'
+    gem 'sass-twitter-bootstrap-rails', '~> 1.0'
+
+or, if you want to use the old Bootstrap
+
+    gem 'sass-twitter-bootstrap-rails', '~> 0.1'
 
 and run from command line
 
