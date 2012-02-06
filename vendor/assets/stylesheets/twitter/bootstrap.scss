@@ -1,21 +1,17 @@
 /*!
- * Bootstrap v1.4.0
+ * Bootstrap v2.0.0
  *
- * Copyright 2011 Twitter, Inc
+ * Copyright 2012 Twitter, Inc
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
- *
- * Converted to Sass by @johnwlong.
- *
- * Date: @DATE
  */
 
 // CSS Reset
 @import "reset.scss";
 
-// Core
+// Core variables and mixins
 @import "variables.scss";
 @import "mixins.scss";
 
@@ -24,9 +20,12 @@
 @import "grid.scss";
 @import "layout.scss";
 
-
-// Styled patterns and elements
+// Base CSS
 @import "type.scss";
+@import "code.scss";
 @import "forms.scss";
 @import "tables.scss";
+
+
+
 @import "patterns.scss";
