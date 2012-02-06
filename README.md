@@ -1,13 +1,11 @@
-# sass-twitter-bootstrap-rails
+# Twitter Bootstrap for Rails 3.1 with Sass
 
-Twitter CSS Toolkit, Bootstrap, for Rails with Sass !
+Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites. 
+It includes base CSS and javascripts for typography, forms, buttons, tables, grids, navigation, and more.
 
-This gem provides :
+sass-twitter-bootstrap-rails project integrates Bootstrap for Rails 3.1+ applications with asset pipeline enabled
 
-* stylesheets converted to Sass
-* javascripts from Bootstrap also
-
-The `master` branch uses new *Twitter Bootstrap 2*. Version 1.4 of Bootstrap is kept in a branch now.
+The `master` branch uses new __Twitter Bootstrap 2__. Version 1.4 of Bootstrap is kept in a branch now.
 
 ## Installation
 
@@ -15,7 +13,7 @@ Include Boostrap in your `Gemfile`
 
     gem 'sass-twitter-bootstrap-rails', '~> 1.0'
 
-or, if you want to use the old Bootstrap
+or, if you want to use the old version of Bootstrap
 
     gem 'sass-twitter-bootstrap-rails', '~> 0.1'
 
@@ -33,6 +31,11 @@ For Rails 3.1+, the files will be added to the assets pipeline and available for
 `app/assets/stylesheets/application.scss`
 
     @import "twitter/bootstrap";
+    
+You can also import additionnal files, like the responsive grid or only files you need
+
+    @import "twitter/bootstrap/responsiveness"
+    @import "twitter/bootstrap/forms"
 
 To use complementary javascripts files, you can use the `manifest` present in the gem by adding this line to the file
 `app/assets/javascripts/application.js`
@@ -41,8 +44,8 @@ To use complementary javascripts files, you can use the `manifest` present in th
 
 or if you do not wish to use all javascripts included, you can require them separalety
 
-    /= require twitter/bootstrap-buttons
-    /= require twitter/bootstrap-tabs
+    /= require twitter/bootstrap/bootstrap-button
+    /= require twitter/bootstrap/bootstrap-tab
 
 ### Rails 3.0
 
@@ -50,9 +53,14 @@ Not yet available
 
 ## Generators
 
-Not yet available
+If you're the kind of developers that prefer action over explanation, there is a generator that will install all of
+this, so you can start immediatly. Just run in the command line
+
+    rails g bootstrap:install
+    
+and start enjoying !
 
 ## Thanks
 
-Twitter Bootstrap http://twitter.github.com/bootstrap and http://github.com/jlong/sass-twitter-bootstrap for the Sass conversion
+Twitter Bootstrap http://twitter.github.com/bootstrap
 
