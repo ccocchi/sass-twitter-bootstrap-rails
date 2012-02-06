@@ -45,4 +45,22 @@
 @import "pagination.scss";
 @import "pager.scss";
 
+// Components: Popovers
+@import "modals.scss";
+@import "tooltip.scss";
+@import "popovers.scss";
+
+// Components: Misc
+@import "thumbnails.scss";
+@import "labels.scss";
+@import "progress-bars.scss";
+@import "accordion.scss";
+@import "carousel.scss";
+@import "hero-unit.scss";
+
+// Utility classes
+@import "utilities.scss"; // Has to be last to override when necessary
+
+
+
 @import "patterns.scss";
