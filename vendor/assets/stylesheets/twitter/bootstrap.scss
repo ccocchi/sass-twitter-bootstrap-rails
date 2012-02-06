@@ -9,54 +9,54 @@
  */
 
 // CSS Reset
-@import "reset.scss";
+@import "bootstrap/reset.scss";
 
 // Core variables and mixins
-@import "variables.scss";
-@import "mixins.scss";
+@import "bootstrap/variables.scss";
+@import "bootstrap/mixins.scss";
 
 // Grid system and page structure
-@import "scaffolding.scss";
-@import "grid.scss";
-@import "layout.scss";
+@import "bootstrap/scaffolding.scss";
+@import "bootstrap/grid.scss";
+@import "bootstrap/layout.scss";
 
 // Base CSS
-@import "type.scss";
-@import "code.scss";
-@import "forms.scss";
-@import "tables.scss";
+@import "bootstrap/type.scss";
+@import "bootstrap/code.scss";
+@import "bootstrap/forms.scss";
+@import "bootstrap/tables.scss";
 
 // Components: common
-@import "sprites.scss";
-@import "dropdowns.scss";
-@import "wells.scss";
-@import "component-animations.scss";
-@import "close.scss";
+@import "bootstrap/sprites.scss";
+@import "bootstrap/dropdowns.scss";
+@import "bootstrap/wells.scss";
+@import "bootstrap/component-animations.scss";
+@import "bootstrap/close.scss";
 
 // Components: Buttons & Alerts
-@import "buttons.scss";
-@import "button-groups.scss";
-@import "alerts.scss"; // Note: alerts share common CSS with buttons and thus have styles in buttons.scss
+@import "bootstrap/buttons.scss";
+@import "bootstrap/button-groups.scss";
+@import "bootstrap/alerts.scss"; // Note: alerts share common CSS with buttons and thus have styles in buttons.scss
 
 // Components: Nav
-@import "navs.scss";
-@import "navbar.scss";
-@import "breadcrumbs.scss";
-@import "pagination.scss";
-@import "pager.scss";
+@import "bootstrap/navs.scss";
+@import "bootstrap/navbar.scss";
+@import "bootstrap/breadcrumbs.scss";
+@import "bootstrap/pagination.scss";
+@import "bootstrap/pager.scss";
 
 // Components: Popovers
-@import "modals.scss";
-@import "tooltip.scss";
-@import "popovers.scss";
+@import "bootstrap/modals.scss";
+@import "bootstrap/tooltip.scss";
+@import "bootstrap/popovers.scss";
 
 // Components: Misc
-@import "thumbnails.scss";
-@import "labels.scss";
-@import "progress-bars.scss";
-@import "accordion.scss";
-@import "carousel.scss";
-@import "hero-unit.scss";
+@import "bootstrap/thumbnails.scss";
+@import "bootstrap/labels.scss";
+@import "bootstrap/progress-bars.scss";
+@import "bootstrap/accordion.scss";
+@import "bootstrap/carousel.scss";
+@import "bootstrap/hero-unit.scss";
 
 // Utility classes
-@import "utilities.scss"; // Has to be last to override when necessary
+@import "bootstrap/utilities.scss"; // Has to be last to override when necessary
