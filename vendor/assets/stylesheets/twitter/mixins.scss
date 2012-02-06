@@ -162,7 +162,7 @@
 // -----------------------------------
 
 @mixin fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, $columns) {
-  width: 1% * ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1));
+  width: 0.01 * ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1));
 }
 
 @mixin fluid-gridColumn($fluidGridGutterWidth) {
