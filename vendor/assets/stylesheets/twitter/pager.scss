@@ -3,7 +3,7 @@
 
 .pager {
   margin-left: 0;
-  margin-bottom: @baseLineHeight;
+  margin-bottom: $baseLineHeight;
   list-style: none;
   text-align: center;
   @include clearfix;
