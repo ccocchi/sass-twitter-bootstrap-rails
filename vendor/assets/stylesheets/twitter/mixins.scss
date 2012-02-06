@@ -305,7 +305,7 @@
 // Opacity
 @mixin opacity($opacity: 100) {
   opacity: $opacity / 100;
-  filter: alpha(opacity='#{opacity}');
+  filter: alpha(opacity=#{$opacity});
 }
 
 // Backgrounds
