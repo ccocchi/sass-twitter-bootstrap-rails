@@ -93,7 +93,7 @@ input[type="file"] {
   padding: initial;
   line-height: initial;
   border: initial;
-  background-color: @white;
+  background-color: $white;
   background-color: initial;
   @include box-shadow(none);
 }
@@ -117,7 +117,7 @@ input[type="file"] {
 // Chrome on Linux and Mobile Safari need background-color
 select {
   width: 220px; // default input width + 10px of padding that doesn't get applied
-  background-color: @white;
+  background-color: $white;
 }
 
 // Make multiple select elements height not fixed
@@ -186,13 +186,13 @@ input,
 textarea {
   @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
   $transition: border linear .2s, box-shadow linear .2s;
-  @include transition(@transition);
+  @include transition($transition);
 }
 input:focus,
 textarea:focus {
   border-color: rgba(82,168,236,.8);
   $shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
-  @include box-shadow(@shadow);
+  @include box-shadow($shadow);
   outline: 0;
   outline: thin dotted \9; /* IE6-8 */
 }
@@ -315,7 +315,7 @@ select:focus:required:invalid {
 // For text that needs to appear as an input but should not be an input
 .uneditable-input {
   display: block;
-  background-color: @white;
+  background-color: $white;
   border-color: #eee;
   @include box-shadow(inset 0 1px 2px rgba(0,0,0,.025));
   cursor: not-allowed;
@@ -353,7 +353,7 @@ select:focus:required:invalid {
   @include clearfix; // Clear the float to prevent wrapping
   input,
   .uneditable-input {
-    .border-radius(0 3px 3px 0);
+    @include border-radius(0 3px 3px 0);
     &:focus {
       position: relative;
       z-index: 2;

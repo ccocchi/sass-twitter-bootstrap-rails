@@ -163,7 +163,7 @@ blockquote {
   margin: 0 0 $baseLineHeight;
   border-left: 5px solid $grayLighter;
   p {
-    @include shorthand-font(16px, 300, $baseLineHeight * 1.25);
+    @include shorthand(16px, 300, $baseLineHeight * 1.25);
     margin-bottom: 0;
   }
   small {
@@ -181,7 +181,7 @@ blockquote {
     padding-left: 0;
     padding-right: 15px;
     border-left: 0;
-    border-right: 5px solid @grayLighter;
+    border-right: 5px solid $grayLighter;
     p,
     small {
       text-align: right;
