@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = ">= 1.3.6"
 
-  s.add_dependency "railties", ">= 3"
+  s.add_dependency "railties", ">= 3.1"
 
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.files         = `git ls-files`.split("\n")
