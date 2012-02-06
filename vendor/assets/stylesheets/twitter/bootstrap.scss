@@ -27,15 +27,22 @@
 @import "tables.scss";
 
 // Components: common
-@import "sprites.less";
-@import "dropdowns.less";
-@import "wells.less";
-@import "component-animations.less";
-@import "close.less";
+@import "sprites.scss";
+@import "dropdowns.scss";
+@import "wells.scss";
+@import "component-animations.scss";
+@import "close.scss";
 
 // Components: Buttons & Alerts
-@import "buttons.less";
-@import "button-groups.less";
-@import "alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.scss
+@import "buttons.scss";
+@import "button-groups.scss";
+@import "alerts.scss"; // Note: alerts share common CSS with buttons and thus have styles in buttons.scss
+
+// Components: Nav
+@import "navs.scss";
+@import "navbar.scss";
+@import "breadcrumbs.scss";
+@import "pagination.scss";
+@import "pager.scss";
 
 @import "patterns.scss";
