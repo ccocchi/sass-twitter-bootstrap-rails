@@ -1,4 +1,4 @@
-# Twitter Bootstrap for Rails 3.1 with Sass
+# Twitter Bootstrap for Rails 3.1+ with Sass
 
 Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites. 
 It includes base CSS and javascripts for typography, forms, buttons, tables, grids, navigation, and more.
