@@ -19,7 +19,7 @@
 
 .tab-focus {
   // Default
-  outline: thin dotted;
+  outline: thin dotted #333;
   // Webkit
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
@@ -74,6 +74,15 @@
   ::-webkit-input-placeholder {
     color: $color;
   }
+}
+
+// Text overflow
+// -------------------------
+// Requires inline-block or block for proper styling
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 // Fonts
@@ -184,7 +193,7 @@
     }
 
     @for $i from 1 through 11 {
-      .span#{$i} { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, $i); }
+      > .span#{$i} { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, $i); }
     }
   }
 }
@@ -203,6 +212,46 @@
     @for $i from 1 through 11 {
       &.span#{$i} { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, $i); }
     }
+  }
+}
+
+// Make a grid
+.make-row {
+  margin-left: $gridGutterWidth * -1;
+  @extend .clearfix;
+}
+
+@mixin makeColumn($column: 1) {
+  float: left;
+  margin-left: $gridGutterWidth;
+  width: ($gridColumnWidth * $columns) + ($gridGutterWidth * ( $columns - 1));
+}
+
+// Mixin for form field states
+@mixin formFieldState($textColor: #555, $borderColor: #ccc, $backgroundColor: #f5f5f5) {
+  // Set the text color
+  > label,
+  .help-block,
+  .help-inline {
+    color: $textColor;
+  }
+  // Style inputs accordingly
+  input,
+  select,
+  textarea {
+    color: $textColor;
+    border-color: $borderColor;
+    &:focus {
+      border-color: darken($borderColor, 10%);
+      @include box-shadow(0 0 6px lighten($borderColor, 20%));
+    }
+  }
+  // Give a small background color for input-prepend/-append
+  .input-prepend .add-on,
+  .input-append .add-on {
+    color: $textColor;
+    background-color: $backgroundColor;
+    border-color: $textColor;
   }
 }
 
@@ -253,6 +302,13 @@
       -ms-transform: translate($x, $y);
        -o-transform: translate($x, $y);
           transform: translate($x, $y);
+}
+@mixin translate3d($x: 0, $y: 0, $z: 0) {
+  -webkit-transform: translate($x, $y, $z);
+     -moz-transform: translate($x, $y, $z);
+      -ms-transform: translate($x, $y, $z);
+       -o-transform: translate($x, $y, $z);
+          transform: translate($x, $y, $z);
 }
 
 // Background clipping
