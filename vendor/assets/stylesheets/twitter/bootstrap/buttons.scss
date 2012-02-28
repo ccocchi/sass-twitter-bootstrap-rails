@@ -16,7 +16,7 @@
   text-align: center;
   text-shadow: 0 1px 1px rgba(255,255,255,.75);
   vertical-align: middle;
-  @include buttonBackground($white, darken($white, 10%))
+  @include buttonBackground($white, darken($white, 10%));
   border: 1px solid #ccc;
   border-bottom-color: #bbb;
   @include border-radius(4px);
