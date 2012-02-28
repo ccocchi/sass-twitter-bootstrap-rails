@@ -108,7 +108,8 @@ ol {
 li {
   line-height: $baseLineHeight;
 }
-ul.unstyled {
+ul.unstyled,
+ol.unstyled {
   list-style: none;
   margin-left: 0;
 }
@@ -134,7 +135,7 @@ dl {
 hr {
   margin: $baseLineHeight 0;
   border: 0;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid $hrBorder;
   border-bottom: 1px solid $white;
 }
 
