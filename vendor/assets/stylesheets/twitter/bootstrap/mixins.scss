@@ -485,34 +485,38 @@
 // Le grid system
 // -----------------------------------
 
-@mixin columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, $columns) {
+// Equivalent of .span() on bootstrap.less
+@mixin columns($gridColumnWidth, $gridGutterWidth, $columns) {
   width: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1));
 }
+
 @mixin offset($gridColumnWidth, $gridGutterWidth, $columns) {
   margin-left: ($gridColumnWidth * $columns) + ($gridGutterWidth * ($columns - 1)) + ($gridGutterWidth * 2);
 }
-@mixin gridColumn($gridGutterWidth) {
-  float: left;
-  margin-left: $gridGutterWidth;
-}
 
-@mixin generate($gridColumns, $gridColumnWidth, $gridGutterWidth) {
+@mixin generate($gridColumnWidth, $gridGutterWidth) {
   .row {
     margin-left: $gridGutterWidth * -1;
-    @include clearfix;
-    > [class*="span"] {
-      @include gridColumn($gridGutterWidth);
-    }
+    @extend clearfix;
   }
 
-  @for $i from 1 through 11 {
-    .span#{$i} { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, $i); }
+  [class*="span"] {
+    float: left;
+    margin-left: $gridGutterWidth;
   }
 
-  .span12,
-  .container  { @include columns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, 12); }
+  // Set the container width, and override it for fixed navbars in media queries
+  .container,
+  .navbar-fixed-top .container,
+  .navbar-fixed-bottom .container {
+    @include columns($gridColumnWidth, $gridGutterWidth, $gridColumns);
+  }
 
-  @for $i from 1 through 11 {
+  @for $i from 1 through $gridColumns {
+    .span#{$i} { @include columns($gridColumnWidth, $gridGutterWidth, $i); }
+  }
+
+  @for $i from 1 through $gridColumns {
     .offset#{$i} { @include offset($gridColumnWidth, $gridGutterWidth, $i); }
   }
 }
@@ -520,30 +524,26 @@
 // Fluid Grid System
 // -----------------------------------
 
-@mixin fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, $columns) {
-  width: 0.01 * ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1));
+@mixin fluid-columns($fluidGridColumnWidth, $fluidGridGutterWidth, $columns) {
+  width: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1));
 }
 
-@mixin fluid-gridColumn($fluidGridGutterWidth) {
-  float: left;
-  margin-left: $fluidGridGutterWidth;
-}
-
-@mixin fluid-generate($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
+@mixin fluid-generate($fluidGridColumnWidth, $fluidGridGutterWidth) {
   .row-fluid {
     width: 100%;
-    @include clearfix;
+    @extend clearfix;
 
     > [class*="span"] {
-      @include fluid-gridColumn($fluidGridGutterWidth);
+      float: left;
+      margin-left: $fluidGridGutterWidth;
     }
 
     > [class*="span"]:first-child {
       margin-left: 0;
     }
 
-    @for $i from 1 through 11 {
-      > .span#{$i} { @include fluid-columns($fluidGridGutterWidth, $fluidGridColumnWidth, $i); }
+    @for $i from 1 through $gridColumns {
+      > .span#{$i} { @include fluid-columns($fluidGridColumnWidth, $fluidGridGutterWidth, $i); }
     }
   }
 }
@@ -551,16 +551,17 @@
 // Input grid system
 // -----------------------------------
 
-@mixin inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, $columns) {
+@mixin inputColumns($gridGutterWidth, $gridColumnWidth, $columns) {
   width: (($gridColumnWidth) * $columns) + ($gridGutterWidth * ($columns - 1)) - 10;
 }
 
-@mixin input-generate($gridColumns, $gridColumnWidth, $gridGutterWidth) {
+@mixin input-generate($gridColumnWidth, $gridGutterWidth) {
   input,
   textarea,
   .uneditable-input {
+    margin-left: 0;
     @for $i from 1 through 11 {
-      &.span#{$i} { @include inputColumns($gridGutterWidth, $gridColumnWidth, $gridRowWidth, $i); }
+      &.span#{$i} { @include inputColumns($gridGutterWidth, $gridColumnWidth, $i); }
     }
   }
 }

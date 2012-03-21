@@ -176,7 +176,6 @@ $infoBorder:            darken(adjust-hue($infoBackground, -10), 7%);
 $gridColumns:           12;
 $gridColumnWidth:       60px;
 $gridGutterWidth:       20px;
-$gridRowWidth:          $gridColumns * $gridColumnWidth + $gridGutterWidth * ($gridColumns - 1);
 
 // Fluid grid
 $fluidGridColumnWidth:  6.382978723%;

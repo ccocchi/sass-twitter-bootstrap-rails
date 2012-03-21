@@ -182,8 +182,7 @@
 
 .navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
-  // TODO
-  // #grid > .core > .span(@gridColumns);
+  @include columns($gridColumnWidth, $gridGutterWidth, $gridColumns);
 }
 
 // Fixed to top
